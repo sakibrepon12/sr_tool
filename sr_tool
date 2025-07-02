@@ -1,0 +1,27 @@
+import os
+from rich import print
+from src.public_info import fb_public_info
+from src.wordlist import generate_wordlist
+from src.fake_detector import fake_profile_demo
+from src.ip_tracker import ip_lookup
+
+def main():
+    os.system('cls' if os.name=='nt' else 'clear')
+    logo = "[bold cyan]SR TOOL[/bold cyan] — Ethical Hacking Toolkit"
+    print(logo)
+    print("""
+[1] Facebook Public Info Viewer
+[2] Wordlist Generator
+[3] Fake Profile Detector
+[4] IP Tracker
+[5] Exit
+""")
+    choice = input("Choose an option: ")
+    if choice == "1": fb_public_info()
+    elif choice == "2": generate_wordlist()
+    elif choice == "3": fake_profile_demo()
+    elif choice == "4": ip_lookup()
+    else: print("Bye!") and exit()
+
+if __name__ == "__main__":
+    main()
